@@ -83,13 +83,35 @@ Language is not the signal: Chinese-speaking users may be on the global server. 
 
 ## What the agent can do
 
-| Area | Tools |
-| --- | --- |
-| Find and read notes | `note_search` (semantic search over full note text), `recent_notes` (browse by time), `note_detail` (one note in full, including transcripts) |
-| Recordings by speaker | `speaker_list`, `search_by_speaker` — "notes where I talked with Allen" |
-| Write notes | `note_create`, `note_update` (plain text / markdown) |
-| To-dos | `todo_list`, `todo_create`, `todo_update` with date, time and timezone |
-| Folders | `folder_list`, `folder_notes`, `unfiled_notes`, `folder_create`, `folder_edit`, `note_move` |
+The MCP server exposes 16 tools in five groups.
+
+**Find and read notes**
+
+- Semantic search over the full text of your notes, including transcripts and links — `note_search`
+- Browse by time: latest note, notes from last week, notes in a date range — `recent_notes`
+- Read one note in full, or just its body — `note_detail`
+
+**Recordings by speaker**
+
+- List the people who appear as speakers in your recordings (you and your saved contacts) — `speaker_list`
+- Find the recordings where a given person spoke, optionally within a time range — `search_by_speaker`
+
+**Write notes**
+
+- Create a plain-text / markdown note with title, summary and tags — `note_create`
+- Update a note's title, body, summary or tags — `note_update`
+
+**To-dos**
+
+- List open or completed to-dos — `todo_list`
+- Add one or several to-dos with date, time and timezone — `todo_create`
+- Change content or schedule, mark complete or reopen — `todo_update`
+
+**Folders**
+
+- List folders — `folder_list`; list the notes in a folder — `folder_notes`; list notes not in any folder — `unfiled_notes`
+- Create a folder — `folder_create`; rename, change emoji or tags, archive or pin — `folder_edit`
+- Move notes into or out of a folder, up to 50 at a time — `note_move`
 
 Not available through MCP: uploading files, images or link cards. Do those in the ideaShell app.
 

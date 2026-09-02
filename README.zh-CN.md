@@ -83,13 +83,35 @@ OpenCode 会自动发现 `~/.opencode/skills/` 下的 `SKILL.md`。MCP 服务在
 
 ## AI 能做什么
 
-| 场景 | 工具 |
-| --- | --- |
-| 查找与阅读笔记 | `note_search`（对笔记全文做语义检索）、`recent_notes`（按时间浏览）、`note_detail`（读一条笔记全文，含录音转写） |
-| 按说话人找录音 | `speaker_list`、`search_by_speaker`，比如"我和 Allen 聊过的那些录音" |
-| 写笔记 | `note_create`、`note_update`（纯文本 / Markdown） |
-| 待办 | `todo_list`、`todo_create`、`todo_update`，支持日期、时间和时区 |
-| 文件夹 | `folder_list`、`folder_notes`、`unfiled_notes`、`folder_create`、`folder_edit`、`note_move` |
+MCP 服务提供 16 个工具，分五类。
+
+**查找与阅读笔记**
+
+- 对笔记全文做语义检索，含录音转写和链接内容 — `note_search`
+- 按时间浏览：最新一条、上周的笔记、某个时间段的笔记 — `recent_notes`
+- 读一条笔记的全文，或只读正文 — `note_detail`
+
+**按说话人找录音**
+
+- 列出录音里可识别的说话人（你自己和已保存的联系人）— `speaker_list`
+- 找出某个人说过话的录音，可限定时间范围 — `search_by_speaker`
+
+**写笔记**
+
+- 新建纯文本 / Markdown 笔记，带标题、摘要和标签 — `note_create`
+- 修改笔记的标题、正文、摘要或标签 — `note_update`
+
+**待办**
+
+- 查看未完成或已完成的待办 — `todo_list`
+- 新增一条或多条待办，带日期、时间和时区 — `todo_create`
+- 改内容或时间、标记完成或重新打开 — `todo_update`
+
+**文件夹**
+
+- 列出文件夹 — `folder_list`；看某个文件夹里的笔记 — `folder_notes`；看未归档的笔记 — `unfiled_notes`
+- 新建文件夹 — `folder_create`；改名、改 emoji、改标签、归档或置顶 — `folder_edit`
+- 把笔记移进或移出文件夹，一次最多 50 条 — `note_move`
 
 MCP 暂不支持上传文件、图片和链接卡片，这些请在闪念贝壳 App 里完成。
 
