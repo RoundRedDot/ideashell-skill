@@ -1,0 +1,21 @@
+{
+  "name": "ideashell",
+  "version": "0.1.0",
+  "description": "Connect ideaShell (闪念贝壳) notes, voice recordings and to-dos to the agent over MCP. Use when the user mentions ideaShell, 闪念贝壳, their notes, recordings, to-dos, or wants to recall or save something personal.",
+  "author": {
+    "name": "RoundRedDot",
+    "url": "https://ideashell.com/"
+  },
+  "homepage": "https://ideashell.com/mcp.html",
+  "repository": "https://github.com/RoundRedDot/ideashell-skill",
+  "license": "MIT-0",
+  "keywords": [
+    "ideashell",
+    "notes",
+    "mcp",
+    "memory",
+    "voice-notes",
+    "todo",
+    "second-brain"
+  ]
+}

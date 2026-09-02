@@ -1,0 +1,15 @@
+{
+  "name": "ideashell-skill",
+  "owner": {
+    "name": "RoundRedDot",
+    "url": "https://ideashell.com/"
+  },
+  "plugins": [
+    {
+      "name": "ideashell",
+      "source": "./",
+      "description": "Agent skill for ideaShell (闪念贝壳): search, read and write your notes, recordings and to-dos over MCP.",
+      "version": "0.1.0"
+    }
+  ]
+}
