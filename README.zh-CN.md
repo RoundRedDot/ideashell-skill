@@ -126,11 +126,11 @@ MCP 服务提供 16 个工具，分五类。
 
 **写笔记**
 
-闪念贝壳的一条笔记是一个容器：Markdown 正文之外，还能挂录音、图片、文档和网页链接卡片。通过 MCP，AI 可以：
+闪念贝壳的一条笔记是一个容器：Markdown 正文之外，还能挂录音、图片和文档。通过 MCP，AI 可以：
 
 - 新建 Markdown 笔记，带标题、摘要和标签，可直接放进某个文件夹 — `note_create`
 - 修改笔记的标题、正文、摘要或标签 — `note_update`
-- 新建或更新时附上图片（PNG/JPEG/GIF/WebP，每条最多 9 张、每张 10 MB）和音频文件（MP3/M4A/WAV/AAC/OGG）。音频会保存并可播放，转写由你在 App 里发起 — `note_create` / `note_update`
+- 新建或更新时附上图片、音频和文档（PDF、Word、Excel、PPT、Markdown）。音频会保存并可播放，转写由你在 App 里发起 — `note_create` / `note_update`
 
 **待办**
 
@@ -143,8 +143,6 @@ MCP 服务提供 16 个工具，分五类。
 - 列出文件夹 — `folder_list`；看某个文件夹里的笔记 — `folder_notes`；看未归档的笔记 — `unfiled_notes`
 - 新建文件夹 — `folder_create`；改名、改 emoji、改标签、归档或置顶 — `folder_edit`
 - 把笔记移进或移出文件夹，一次最多 50 条 — `note_move`
-
-MCP 暂不支持挂载文档（PDF、Word、Excel、PPT）和网页链接卡片，不能删除附件，也不能发起转写，这些请在闪念贝壳 App 里完成。
 
 ## Skill 额外带来什么
 

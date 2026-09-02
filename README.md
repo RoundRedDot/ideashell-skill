@@ -126,11 +126,11 @@ The MCP server exposes 16 tools in five groups.
 
 **Write notes**
 
-An ideaShell note is a container: a markdown body plus attachments such as recordings, images, documents and web-link cards. Through MCP the agent can:
+An ideaShell note is a container: a markdown body plus attachments such as recordings, images and documents. Through MCP the agent can:
 
 - Create a markdown note with title, summary and tags, optionally in a folder — `note_create`
 - Update a note's title, body, summary or tags — `note_update`
-- Attach images (PNG/JPEG/GIF/WebP, up to 9 per note, 10 MB each) and audio files (MP3/M4A/WAV/AAC/OGG) when creating or updating. Audio is stored and playable; you start transcription yourself in the app — `note_create` / `note_update`
+- Attach images, audio and documents (PDF, Word, Excel, PowerPoint, Markdown) when creating or updating. Audio is stored and playable; you start transcription yourself in the app — `note_create` / `note_update`
 
 **To-dos**
 
@@ -143,8 +143,6 @@ An ideaShell note is a container: a markdown body plus attachments such as recor
 - List folders — `folder_list`; list the notes in a folder — `folder_notes`; list notes not in any folder — `unfiled_notes`
 - Create a folder — `folder_create`; rename, change emoji or tags, archive or pin — `folder_edit`
 - Move notes into or out of a folder, up to 50 at a time — `note_move`
-
-Not available through MCP: attaching documents (PDF, Word, Excel, PowerPoint) or web-link cards, removing attachments, and starting transcription. Do those in the ideaShell app.
 
 ## What the skill adds
 
