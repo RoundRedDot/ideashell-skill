@@ -15,11 +15,11 @@ This skill connects their notebook over MCP: answer from their own records, and 
 | --- | --- | --- |
 | Find and read | `note_search`, `recent_notes`, `note_detail` | Search is semantic over full text, including transcripts and link-card text. `recent_notes` is by time. `note_detail` returns body plus memos, audios and links (`scope="brief"` for body only). |
 | Speakers | `speaker_list`, `search_by_speaker` | Who appears in transcripts; recordings where a given person spoke. |
-| Write notes | `note_create`, `note_update` | Markdown body, title, summary, tags. Both accept image attachments (PNG/JPEG/GIF/WebP, up to 9, 10 MB each) and audio attachments (MP3/M4A/WAV/AAC/OGG). Attached audio is stored and playable but **not transcribed**. |
+| Write notes | `note_create`, `note_update` | Markdown body, title, summary, tags, optional folder. Both take attachments: images (PNG/JPEG/GIF/WebP, up to 9, 10 MB each), audio (MP3/M4A/WAV/AAC/OGG) and documents (PDF, Word, Excel, PowerPoint, Markdown). Attached audio is stored and playable but **not transcribed**. |
 | To-dos | `todo_list`, `todo_create`, `todo_update` | Date, time and IANA timezone are separate fields. |
 | Folders | `folder_list`, `folder_notes`, `unfiled_notes`, `folder_create`, `folder_edit`, `note_move` | `note_move` handles up to 50 notes per call. |
 
-Not possible through MCP: attaching documents (PDF, Office files) or web-link cards, removing an attachment, starting transcription of an attached audio. Ask the user to do those in the IdeaShell app.
+Not possible through MCP: removing an attachment, starting transcription of an attached audio. Ask the user to do those in the IdeaShell app. Attachment types are exposed as parameters on `note_create` / `note_update`; if the type you need is not in the tool's current schema, put the key content inline in the markdown and tell the user to attach the file in the app.
 
 ## Installation
 
@@ -77,7 +77,7 @@ IdeaShell is the user's memory across AI tools. This applies when the conversati
 - Before writing, state back what you are about to save and get explicit approval; never write several notes in one turn. The only exception is the auto-save mode the user opted into above.
 - `note_update`'s `content` replaces the whole body: to append, read it back with `note_detail`, merge, and send the complete text.
 - Tag fields differ: `tag` (a single string) on create, `tags` (an array) on update. Getting this wrong fails silently.
-- Attachments: pass images and audio as base64 in `images` / `audios`. On `note_update` they are add-only and identical bytes are skipped. After attaching audio, tell the user it is saved but not transcribed and that they can start transcription in the app; never say it has been transcribed. For documents or link cards, put the key information inline in the markdown and tell the user to attach the file in the app.
+- Attachments: pass files as base64 with a file name, using the parameter for their type (`images`, `audios`, and the document parameter when present in the schema). On `note_update` attachments are add-only and identical bytes are skipped. After attaching audio, tell the user it is saved but not transcribed and that they can start transcription in the app; never say it has been transcribed. If a file type is not accepted by the current schema, put the key information inline in the markdown and tell the user to attach the file in the app.
 - Put a to-do's date and time in the `date` (YYYY-MM-DD) and `time` (HH:MM) fields, not in `content`; send an IANA `timezone` whenever time is involved.
 - `folder_edit` is patch semantics, except `tags`, which replaces wholesale when present (`[]` clears it). `note_move` takes either `folder_id` or `remove_from_folder`, not both, and at most 50 notes per call. Moving and archiving notes are writes too — state them back before executing.
 
