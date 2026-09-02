@@ -62,11 +62,11 @@ git clone https://github.com/RoundRedDot/ideashell-skill.git ~/.opencode/skills/
 
 OpenCode 会自动发现 `~/.opencode/skills/` 下的 `SKILL.md`。MCP 服务在 `opencode.json` 里按远程服务器加上面的地址。
 
-#### Claude.ai 与 Claude Desktop
+#### Claude.ai（网页版）
 
 对话类客户端不加载 skill，但 MCP 服务可以单独使用。
 
-1. 打开 Claude.ai 或 Claude 桌面 App。
+1. 打开 Claude.ai 网页版。
 2. 进入 **Customize → Connectors**。
 3. 点击右上角 **+** 添加连接器。
 4. 填写：

@@ -62,11 +62,11 @@ git clone https://github.com/RoundRedDot/ideashell-skill.git ~/.opencode/skills/
 
 OpenCode discovers `SKILL.md` files under `~/.opencode/skills/` automatically. Add the MCP server in `opencode.json` as a remote server with the URL above.
 
-#### Claude.ai and Claude Desktop
+#### Claude.ai
 
 Chat clients don't load skills, but the MCP server works on its own.
 
-1. Open Claude.ai or the Claude desktop app.
+1. Open Claude.ai in the browser.
 2. Go to **Customize → Connectors**.
 3. Click **+** in the top-right corner to add a connector.
 4. Fill in:
