@@ -62,12 +62,40 @@ git clone https://github.com/RoundRedDot/ideashell-skill.git ~/.opencode/skills/
 
 OpenCode discovers `SKILL.md` files under `~/.opencode/skills/` automatically. Add the MCP server in `opencode.json` as a remote server with the URL above.
 
-#### Claude.ai, Claude Desktop, ChatGPT, Cursor and other MCP clients
+#### Claude.ai and Claude Desktop
 
-These clients don't load skills, but the MCP server works on its own. In the client's MCP / connectors settings add the server URL for your region and choose OAuth:
+Chat clients don't load skills, but the MCP server works on its own.
+
+1. Open Claude.ai or the Claude desktop app.
+2. Go to **Customize → Connectors**.
+3. Click **+** in the top-right corner to add a connector.
+4. Fill in:
+   ```
+   Name:                   ideaShell
+   Remote MCP server URL:  https://api.ideashell.com/ideashell/mcp
+   ```
+5. Click **Add**. The ideaShell sign-in page opens; sign in and approve.
+6. Back in Claude, the tools are ready. On first use Claude may ask whether to allow the tool; click allow.
+
+#### ChatGPT
+
+1. Open ChatGPT in the browser.
+2. Click **Plugins** in the left sidebar.
+3. Click **+** next to the search box and choose **New Plugin**.
+4. Fill in:
+   ```
+   Name:        ideaShell
+   Connection:  https://api.ideashell.com/ideashell/mcp
+   ```
+   Tick **I understand and want to continue**.
+5. Click **Create**, then sign in to ideaShell when prompted and approve.
+
+#### Cursor and other MCP clients
+
+Any client that supports remote MCP over Streamable HTTP with OAuth works. Generic configuration:
 
 ```json
-{ "type": "http", "url": "https://api.ideashell.com/ideashell/mcp" }
+{ "mcpServers": { "ideashell": { "url": "https://api.ideashell.com/ideashell/mcp" } } }
 ```
 
 ## Server regions

@@ -62,12 +62,40 @@ git clone https://github.com/RoundRedDot/ideashell-skill.git ~/.opencode/skills/
 
 OpenCode 会自动发现 `~/.opencode/skills/` 下的 `SKILL.md`。MCP 服务在 `opencode.json` 里按远程服务器加上面的地址。
 
-#### Claude.ai、Claude Desktop、ChatGPT、Cursor 及其它 MCP 客户端
+#### Claude.ai 与 Claude Desktop
 
-这些客户端不加载 skill，但 MCP 服务可以单独使用。在客户端的 MCP / 连接器设置里填入你所在区域的服务地址，认证选 OAuth：
+对话类客户端不加载 skill，但 MCP 服务可以单独使用。
+
+1. 打开 Claude.ai 或 Claude 桌面 App。
+2. 进入 **Customize → Connectors**。
+3. 点击右上角 **+** 添加连接器。
+4. 填写：
+   ```
+   Name:                   ideaShell
+   Remote MCP server URL:  https://api.ideashell.cn/ideashell/mcp
+   ```
+5. 点击 **Add**，会打开闪念贝壳登录授权页，登录并确认授权。
+6. 回到 Claude 即可使用。首次调用时 Claude 可能询问是否允许使用该工具，点允许即可。
+
+#### ChatGPT
+
+1. 在浏览器打开 ChatGPT。
+2. 点击左侧导航栏的 **Plugins**。
+3. 点击搜索框右侧的 **+**，选择 **New Plugin**。
+4. 填写：
+   ```
+   Name:        ideaShell
+   Connection:  https://api.ideashell.cn/ideashell/mcp
+   ```
+   勾选 **I understand and want to continue**。
+5. 点击 **Create**，随后按提示登录闪念贝壳并确认授权。
+
+#### Cursor 及其它 MCP 客户端
+
+支持远程 MCP（Streamable HTTP + OAuth）的客户端都可以用。通用配置：
 
 ```json
-{ "type": "http", "url": "https://api.ideashell.cn/ideashell/mcp" }
+{ "mcpServers": { "ideashell": { "url": "https://api.ideashell.cn/ideashell/mcp" } } }
 ```
 
 ## 服务区域
